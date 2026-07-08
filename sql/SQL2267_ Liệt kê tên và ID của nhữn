@@ -1,0 +1,7 @@
+select 
+  a.student_id, 
+  i.name
+from student_disability_accommodations a
+join  student_info i on a.student_id=i.student_id
+having count(distinct a.department )>1
+group by a.student_id, i.name;

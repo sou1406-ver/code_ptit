@@ -1,0 +1,5 @@
+select 
+  max(r.Horsepower) as  horsepower
+from Vehicle_Releases r
+join Vehicle_Types t on r.Vehicle_Type_Id = t.Id
+where t.Name="Sedan" and year(r.Release_Date)>=2020;

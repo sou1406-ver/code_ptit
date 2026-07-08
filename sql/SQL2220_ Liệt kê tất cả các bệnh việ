@@ -1,0 +1,8 @@
+select 
+  h.name,
+  h.num_beds-o.beds_occupied as empty_beds_count,
+  o.beds_occupied*100.0/h.num_beds as pct_occupied
+from hospitals h
+join occupancy o on h.id=o.hospital_id
+where h.state="New York"
+order by o.beds_occupied*100.0/h.num_beds desc;

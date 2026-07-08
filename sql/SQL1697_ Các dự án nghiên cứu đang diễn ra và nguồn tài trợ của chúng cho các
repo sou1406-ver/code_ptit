@@ -1,0 +1,18 @@
+SELECT
+    s.SiteName,
+    p.ProjectName,
+    f.SourceName,
+    f.Amount,
+    p.StartDate,
+    p.EndDate
+FROM ExcavationSite s
+JOIN ResearchProject p
+  ON p.SiteID = s.SiteID
+LEFT JOIN FundingSource f
+  ON f.ProjectID = p.ProjectID
+WHERE s.Country = 'Egypt'
+  AND (
+        p.EndDate IS NULL
+        OR CURRENT_DATE BETWEEN p.StartDate AND p.EndDate
+      )
+ORDER BY s.SiteName, p.ProjectName, f.SourceName;

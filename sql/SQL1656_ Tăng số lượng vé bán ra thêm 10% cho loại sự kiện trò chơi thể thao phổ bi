@@ -1,0 +1,10 @@
+UPDATE TicketSales
+SET tickets_sold = tickets_sold * 1.1
+WHERE event_type = (
+    SELECT TOP 1 event_type
+    FROM TicketSales
+    WHERE event_type = 'Sports Game'
+      AND date >= DATEADD(MONTH, -1, GETDATE())
+    GROUP BY event_type
+    ORDER BY SUM(tickets_sold) DESC
+);

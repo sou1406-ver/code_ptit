@@ -1,0 +1,8 @@
+select 
+  category,
+  count(name) as event_count
+from events
+where 
+  tickets_sold>=100 and tickets_sold<=250
+group by category 
+order by count(name) desc, category;

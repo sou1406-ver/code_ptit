@@ -1,0 +1,10 @@
+SELECT 
+    MIN(contract_count) AS min_contracts
+FROM (
+    SELECT 
+        dc_company,
+        COUNT(*) AS contract_count
+    FROM defense_contracts
+    WHERE LOWER(TRIM(dc_country)) IN ('united states', 'usa', 'us', 'america')
+    GROUP BY dc_company
+) AS t;

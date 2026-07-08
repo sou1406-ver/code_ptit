@@ -1,0 +1,9 @@
+select 
+  t.username,
+  t.dept,
+  t.number
+from Teaches t
+join Instructor i
+on i.username= t.username
+order by i.lname desc, t.number
+limit 2;

@@ -1,0 +1,3 @@
+SELECT ip_address FROM login_attempts WHERE login_status = 'thành công'
+INTERSECT
+SELECT ip_address FROM login_attempts WHERE login_status = 'đáng ngờ';

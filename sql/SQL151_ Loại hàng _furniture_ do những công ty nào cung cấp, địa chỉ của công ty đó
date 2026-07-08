@@ -1,0 +1,8 @@
+select 
+  l.TenLoaiHang,
+  c.TenCongTy,
+  c.DiaChi
+from NHACUNGCAP c 
+join MATHANG m on c.MaCongTy=m.MaCongTY
+join LoaiHang l on l.MaLoaiHang=m.MaLoaiHang
+where l.TenLoaiHang='furniture';

@@ -1,0 +1,4 @@
+SELECT name, research_interest
+FROM professors
+WHERE gender = 'Female'
+  AND publication_field = 'Trí tuệ nhân tạo';

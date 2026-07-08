@@ -1,0 +1,7 @@
+SELECT 
+    mc.region,
+    AVG(mc.data_usage) AS avg_data_usage
+FROM mobile_customers mc
+WHERE mc.plan_type = 'postpaid'
+GROUP BY mc.region
+ORDER BY avg_data_usage DESC;

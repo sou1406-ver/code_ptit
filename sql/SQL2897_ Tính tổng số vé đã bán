@@ -1,0 +1,9 @@
+select 
+  category,
+  sum(tickets_sold) as total_tickets
+from events
+where 
+  category='music' or category='theater'
+having sum(tickets_sold)>300
+group by category
+order by sum(tickets_sold) desc;

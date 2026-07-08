@@ -1,0 +1,5 @@
+SELECT 
+    favorite_genre,
+    COUNT(*) AS genre_count
+FROM users
+GROUP BY favorite_genre;

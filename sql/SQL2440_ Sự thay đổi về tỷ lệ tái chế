@@ -1,0 +1,6 @@
+select 
+  r1.recycling_rate-r2.recycling_rate as rate_difference
+from   recycling_rates r1
+join  recycling_rates r2 
+  on r1.material=r2.material and r1.year=r2.year+1
+where r1.material='glass' and  r1.year=2019;

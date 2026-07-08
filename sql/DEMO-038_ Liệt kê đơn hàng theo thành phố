@@ -1,0 +1,9 @@
+select 
+  s.OrderID, 
+  c.CustomerName, 
+  s.OrderDate,
+  s.TotalAmount
+from SaleOrder s
+join Customer c on s.CustID=c.CustID
+where s.TotalAmount >500 and c.City="Ha Noi"
+order by s.OrderID;

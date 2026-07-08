@@ -1,0 +1,8 @@
+select 
+  MATHANG.TenHang,
+  NHACUNGCAP.MaCongTy,
+  NHACUNGCAP.TenCongTy
+from MATHANG
+JOIN NHACUNGCAP
+ON MATHANG.MaCongTy=NHACUNGCAP.MaCongTy
+order by MATHANG.TenHang;

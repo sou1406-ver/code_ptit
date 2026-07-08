@@ -1,0 +1,13 @@
+select 
+  Team,
+  sum(Attendance) as Total_Attendance
+from (
+  select HomeTeam as Team, HomeAttendance as Attendance
+  from TeamStats
+  union 
+  select AwayTeam as Team, AwayAttendance as Attendance
+  from TeamStats
+)t
+group by Team
+order by sum(Attendance) desc, Team
+limit 3;

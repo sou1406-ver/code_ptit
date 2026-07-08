@@ -1,0 +1,3 @@
+select distinct p.tenphg as "Tên phòng"
+from nhanvien n
+join phongban p on n.phg = p.maphg;

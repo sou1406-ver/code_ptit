@@ -1,0 +1,10 @@
+select 
+  i.project,
+  i.location,
+  i.amount,
+  e.environment,
+  e.social,
+  e.governance
+from  impact_investments i
+join esg_factors e on i.company_id=e.company_id
+where i.sector='Renewable Energy' and e.environment+e.social+e.governance>7.5;

@@ -1,0 +1,5 @@
+select 
+  ProductID, 
+  Name
+from Product
+where Price >100;

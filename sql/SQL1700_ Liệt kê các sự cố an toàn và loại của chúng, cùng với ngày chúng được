@@ -1,0 +1,8 @@
+SELECT 
+    Plant,
+    Incident_Type,
+    Report_Date
+FROM Safety_Incidents
+WHERE Plant LIKE '%Chemical%'
+  AND (Plant LIKE '%USA%' OR Plant LIKE '%United States%')
+ORDER BY Report_Date;

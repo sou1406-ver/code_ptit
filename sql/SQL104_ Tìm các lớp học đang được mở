@@ -1,0 +1,4 @@
+select c.title
+from Class c
+Join Teaches t 
+on c.dept = t.dept and c.number = t.number;

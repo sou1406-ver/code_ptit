@@ -1,0 +1,13 @@
+SELECT 
+    a.drug_name,
+    a.year,
+    a.expenditure AS drug_expenditure,
+    ROUND(AVG(b.expenditure), 2) AS avg_other_expenditure,
+    a.expenditure - AVG(b.expenditure) AS diff_from_avg
+FROM r_and_d_data a
+JOIN r_and_d_data b 
+  ON a.year = b.year 
+  AND a.drug_name <> b.drug_name
+WHERE a.drug_name = 'Aspirin'   -- thay tên thuốc cần kiểm tra
+  AND a.year = '2023'           -- thay năm cần kiểm tra
+GROUP BY a.drug_name, a.year, a.expenditure;

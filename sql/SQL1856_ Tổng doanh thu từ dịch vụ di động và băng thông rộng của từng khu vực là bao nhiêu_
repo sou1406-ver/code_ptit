@@ -1,0 +1,10 @@
+SELECT r.region_name,
+       SUM(s.revenue) AS total_revenue
+FROM regions r
+JOIN (
+    SELECT region_id, revenue FROM mobile_services
+    UNION ALL
+    SELECT region_id, revenue FROM broadband_services
+) s
+ON r.region_id = s.region_id
+GROUP BY r.region_name;

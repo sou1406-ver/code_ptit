@@ -1,0 +1,6 @@
+select 
+  d1.gender,
+  count(d2.amount) as total_donations
+from Donors d1
+join Donations d2 on d1.id=d2.donor_id
+group by d1.gender;

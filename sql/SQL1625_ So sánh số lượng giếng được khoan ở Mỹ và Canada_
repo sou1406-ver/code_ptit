@@ -1,0 +1,7 @@
+SELECT 'Canada' AS country,
+       SUM(CASE WHEN country = 'Canada' THEN 1 ELSE 0 END) AS num_wells
+FROM wells
+UNION ALL
+SELECT 'USA' AS country,
+       SUM(CASE WHEN country = 'USA' THEN 1 ELSE 0 END)    AS num_wells
+FROM wells;
